@@ -22,12 +22,6 @@ Run the command below from the Terminal:
       
 ## Authors
 
-👤 **Degisew**
-
-- Location: Ethiopia
-- GitHub: [degisew](https://github.com/degisew)
-- Twitter: [@DJ_etiya](https://twitter.com/Degisew-mengist)
-- LinkedIn: [jegisew21](https://www.linkedin.com/in/degisew-mengist-003298802)
 
 
 ## 🤝 Contributing

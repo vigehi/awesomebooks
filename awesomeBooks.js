@@ -63,7 +63,7 @@ function displayBook() {
         <p>${element.author}</p>
             `;
       displayDiv.append(removeBtn);
-      removeBtn.id = `${index}`;
+      removeBtn.id = `${element.title}`;
       displayDiv.append(line);
     });
   } else {
@@ -74,22 +74,23 @@ function displayBook() {
 //executes automatically when the page is loaded.
  document.addEventListener("DOMContentLoaded", displayBook);
 
-removeBtn.addEventListener("click", (event)=>{
+function removeBook(title) {
+  books = books.filter((book) => book.title !== title);
+  console.log(books);
+  console.log(title);
 
-  for (let i = 0; i < books.length; i++) {
-    if (books[i] == books[event.target.id]) {
-      const x = books.splice(event.target.id, 1);
-      console.log(event.target.id);
-      console.log(x);
-      console.log(books);
-      localStorage.setItem("bookLists", JSON.stringify(books));
-      // const parent = e.target.parentElement;
-      // parent.remove();
-    }
-  }
-});
-//function removeBook(e) {
-//}
+  // // let y = 0;
+  // for (let y = 0; y < books.length; y++)  {
+  //   if (y.toString() === getIndex) {
+  //     this.books.splice(y, 1);
+     
+  //   }
+
+  //   y += 1;
+  // }
+  // localStorage.setItem('data', JSON.stringify(books));
+
+}
 
 form.addEventListener("submit", () => {
   const title = bookTitle.value;
@@ -98,4 +99,14 @@ form.addEventListener("submit", () => {
   displayBook();
   bookTitle.value = "";
   bookAuthor.value = "";
+});
+
+removeBtn.onclick = removeBook(removeBtn.id);
+
+removeBtn.addEventListener("click", (e)=>{
+  // const getIndex = this.id;
+ removeBook(this.id);
+ console.log(e.target.id);
+ e.target.id;
+
 });
